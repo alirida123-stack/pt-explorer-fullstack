@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elements - Periodic Table Explorer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/script.js"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <h1>Periodic Table Explorer</h1>
+    <nav class="navbar">
+      <div class="logo">PT Explorer</div>
+      <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="introduction.html">Introduction</a></li>
+        <li><a href="elements.html" class="active" aria-current="page">Elements</a></li>
+        <li><a href="groups.html">Groups</a></li>
+        <li><a href="facts.html">Facts</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="trends.html">Trends</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="elements-header">
+      <h2>Explore the Elements</h2>
+      <p>
+        Discover all chemical elements, their categories, and their atomic numbers.
+        Hover over any element to see its full name and detailed information.
+      </p>
+    </section>
+    <section class="elements-legend" aria-label="Element category legend">
+      <ul>
+        <li><span class="swatch alkali-metal"></span> Alkali metals</li>
+        <li><span class="swatch alkaline-earth"></span> Alkaline earth metals</li>
+        <li><span class="swatch transition-metal"></span> Transition metals</li>
+        <li><span class="swatch post-transition-metal"></span> Post-transition metals</li>
+        <li><span class="swatch metalloid"></span> Metalloids</li>
+        <li><span class="swatch nonmetal"></span> Other nonmetals</li>
+        <li><span class="swatch halogen"></span> Halogens</li>
+        <li><span class="swatch noble-gas"></span> Noble gases</li>
+        <li><span class="swatch lanthanide"></span> Lanthanides</li>
+        <li><span class="swatch actinide"></span> Actinides</li>
+      </ul>
+    </section>
+
+
+    <section class="table-grid">
+      <div class="element nonmetal" data-name="Hydrogen - Atomic Number 1">H</div>
+      <div class="element noble-gas" data-name="Helium - Atomic Number 2">He</div>
+
+
+
+      <div class="element alkali-metal" data-name="Lithium - Atomic Number 3">Li</div>
+      <div class="element alkaline-earth" data-name="Beryllium - Atomic Number 4">Be</div>
+      <div class="element metalloid" data-name="Boron - Atomic Number 5">B</div>
+      <div class="element nonmetal" data-name="Carbon - Atomic Number 6">C</div>
+      <div class="element nonmetal" data-name="Nitrogen - Atomic Number 7">N</div>
+      <div class="element nonmetal" data-name="Oxygen - Atomic Number 8">O</div>
+      <div class="element halogen" data-name="Fluorine - Atomic Number 9">F</div>
+      <div class="element noble-gas" data-name="Neon - Atomic Number 10">Ne</div>
+
+
+
+      <div class="element alkali-metal" data-name="Sodium - Atomic Number 11">Na</div>
+      <div class="element alkaline-earth" data-name="Magnesium - Atomic Number 12">Mg</div>
+      <div class="element post-transition-metal" data-name="Aluminium - Atomic Number 13">Al</div>
+      <div class="element metalloid" data-name="Silicon - Atomic Number 14">Si</div>
+      <div class="element nonmetal" data-name="Phosphorus - Atomic Number 15">P</div>
+      <div class="element nonmetal" data-name="Sulfur - Atomic Number 16">S</div>
+      <div class="element halogen" data-name="Chlorine - Atomic Number 17">Cl</div>
+      <div class="element noble-gas" data-name="Argon - Atomic Number 18">Ar</div>
+
+
+
+      <div class="element alkali-metal" data-name="Potassium - Atomic Number 19">K</div>
+      <div class="element alkaline-earth" data-name="Calcium - Atomic Number 20">Ca</div>
+      <div class="element transition-metal" data-name="Scandium - Atomic Number 21">Sc</div>
+      <div class="element transition-metal" data-name="Titanium - Atomic Number 22">Ti</div>
+      <div class="element transition-metal" data-name="Vanadium - Atomic Number 23">V</div>
+      <div class="element transition-metal" data-name="Chromium - Atomic Number 24">Cr</div>
+      <div class="element transition-metal" data-name="Manganese - Atomic Number 25">Mn</div>
+      <div class="element transition-metal" data-name="Iron - Atomic Number 26">Fe</div>
+      <div class="element transition-metal" data-name="Cobalt - Atomic Number 27">Co</div>
+      <div class="element transition-metal" data-name="Nickel - Atomic Number 28">Ni</div>
+      <div class="element transition-metal" data-name="Copper - Atomic Number 29">Cu</div>
+      <div class="element transition-metal" data-name="Zinc - Atomic Number 30">Zn</div>
+      <div class="element post-transition-metal" data-name="Gallium - Atomic Number 31">Ga</div>
+      <div class="element metalloid" data-name="Germanium - Atomic Number 32">Ge</div>
+      <div class="element metalloid" data-name="Arsenic - Atomic Number 33">As</div>
+      <div class="element nonmetal" data-name="Selenium - Atomic Number 34">Se</div>
+      <div class="element halogen" data-name="Bromine - Atomic Number 35">Br</div>
+      <div class="element noble-gas" data-name="Krypton - Atomic Number 36">Kr</div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Periodic Table Explorer | Designed by Ali Rida</p>
+    <div class="floating-icon" aria-hidden="true">
+      🧪
+    </div>
+  </footer>
+</body>
+</html>

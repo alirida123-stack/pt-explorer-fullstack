@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz - Periodic Table Explorer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <a class='skip-link' href='#main'>Skip to content</a>
+  <header>
+    <h1>Periodic Table Explorer</h1>
+    <nav class="navbar">
+        <div class="logo">PT Explorer</div>
+        <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="introduction.html">Introduction</a></li>
+            <li><a href="elements.html">Elements</a></li>
+            <li><a href="groups.html">Groups</a></li>
+            <li><a href="facts.html">Facts</a></li>
+            <li><a href="quiz.html" class="active" aria-current="page">Quiz</a></li>
+            <li><a href="trends.html">Trends</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="quiz-page">
+    <section class="quiz-container" aria-labelledby="quiz-title">
+      <h2 id="quiz-title">Periodic Table Mastery Quiz</h2>
+      <p class="quiz-description">
+        Test your knowledge of elements, groups, and trends. Time your answers, track your streak, and beat your high score!
+      </p>
+
+      <div class="quiz-meta" role="status" aria-live="polite">
+        <div class="meta-item"><strong>Question:</strong> <span id="qIndex">0</span>/<span id="qTotal">0</span></div>
+        <div class="meta-item"><strong>Timer:</strong> <span id="timer">--</span>s</div>
+        <div class="meta-item"><strong>Streak:</strong> <span id="streak">0</span></div>
+        <div class="meta-item"><strong>Best:</strong> <span id="bestScore">0</span></div>
+      </div>
+
+      <div class="progress" aria-hidden="true">
+        <div class="progress__bar" id="progressBar" style="width:0%"></div>
+      </div>
+
+      <div id="quiz-start">
+  <p><strong>Player name:</strong></p>
+  <input
+    id="playerName"
+    type="text"
+    placeholder="Enter your name"
+    style="padding:0.5rem 0.75rem; border-radius:8px; border:1px solid #D1D5DB; width:100%; max-width:260px; margin-bottom:1rem;"
+  />
+
+  <p><strong>Choose difficulty:</strong></p>
+  <div class="pill-row" role="group" aria-label="Difficulty">
+    <button class="pill active" data-diff="easy" aria-pressed="true">Easy</button>
+    <button class="pill" data-diff="medium" aria-pressed="false">Medium</button>
+    <button class="pill" data-diff="hard" aria-pressed="false">Hard</button>
+  </div>
+  <button id="start-btn" class="btn">Start Quiz</button>
+</div>
+
+      <div id="quiz-box" class="quiz-box" hidden></div>
+
+      <div class="quiz-controls">
+        <button id="next-btn" class="btn" hidden>Next</button>
+        <button id="review-btn" class="btn-outline" hidden>Review Answers</button>
+      </div>
+
+      <div class="score" id="score"></div>
+
+      <dialog id="reviewModal" aria-labelledby="reviewTitle">
+        <h3 id="reviewTitle">Your Answers</h3>
+        <div id="reviewBody"></div>
+        <form method="dialog">
+          <button class="btn">Close</button>
+        </form>
+      </dialog>
+    </section>
+
+    <!-- 🔥 React Leaderboard Section -->
+    <section class="intro-section" aria-labelledby="leaderboard-title">
+      <h3 id="leaderboard-title">Top Quiz Scores</h3>
+      <p>See how previous attempts performed on this quiz.</p>
+      <div id="leaderboard-root"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Periodic Table Explorer | Designed by Ali Rida</p>
+    <div class="floating-icon" aria-hidden="true">
+      🧪
+    </div>
+  </footer>
+
+  <!-- React + ReactDOM from CDN -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <!-- Our React leaderboard code -->
+  <script defer src="js/leaderboard.js"></script>
+</body>
+</html>

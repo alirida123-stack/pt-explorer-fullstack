@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Groups - Periodic Table Explorer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <a class='skip-link' href='#main'>Skip to content</a>
+
+  <header>
+    <h1>Periodic Table Explorer</h1>
+    <nav class="navbar">
+      <div class="logo">PT Explorer</div>
+      <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="introduction.html">Introduction</a></li>
+        <li><a href="elements.html">Elements</a></li>
+        <li><a href="groups.html" class="active" aria-current="page">Groups</a></li>
+        <li><a href="facts.html">Facts</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="trends.html">Trends</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="groups-container">
+      <h2>Periodic Table Groups</h2>
+      <p>Explore the different groups of the periodic table and learn their key characteristics.</p>
+
+      <!-- 🔥 This will be filled from the backend via JS -->
+      <div class="groups-grid" id="groups-grid">
+        <p>Loading groups...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Periodic Table Explorer | Designed by Ali Rida</p>
+    <div class="floating-icon" aria-hidden="true">
+      🧪
+    </div>
+  </footer>
+</body>
+</html>

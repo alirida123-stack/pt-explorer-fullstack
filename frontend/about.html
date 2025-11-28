@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - Periodic Table Explorer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <h1>Periodic Table Explorer</h1>
+    <nav class="navbar">
+      <div class="logo">PT Explorer</div>
+      <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="introduction.html">Introduction</a></li>
+        <li><a href="elements.html">Elements</a></li>
+        <li><a href="groups.html">Groups</a></li>
+        <li><a href="facts.html">Facts</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="trends.html">Trends</a></li>
+        <li><a href="about.html" class="active" aria-current="page">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="intro-page">
+    <!-- Hero / Intro -->
+    <section class="intro-container" aria-labelledby="about-title">
+      <h2 id="about-title">About Periodic Table Explorer</h2>
+      <p class="intro-text">
+        Periodic Table Explorer is a student-built project designed to make chemistry visual, interactive, and fun.
+        Explore elements by category, learn useful facts, and test your knowledge with a modern, accessible quiz.
+      </p>
+
+      <!-- Mission card with image -->
+      <div class="intro-card">
+        <div class="intro-image-container">
+          <figure>
+            <img class="intro-img" src="images/chem.jpg" alt="Stylized illustration of the periodic table layout"/>
+            <figcaption style="margin-top:.5rem; color:#6B7280; font-size:.95rem;">
+              A clean, color-coded look at element families and trends.
+            </figcaption>
+          </figure>
+        </div>
+        <div class="intro-info">
+          <h3>Our Mission</h3>
+          <p>
+            Make the periodic table approachable for everyone. From basics like symbols and atomic numbers,
+            to group behavior and periodic trends—we present chemistry in a consistent, readable design.
+          </p>
+          <p>
+            This site uses semantic HTML, responsive CSS, and accessible components to ensure a great experience
+            on desktop and mobile devices, including keyboard navigation and screen reader support.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights (reuse groups card style for rich look) -->
+    <section class="groups-container" aria-labelledby="highlights-title">
+      <h2 id="highlights-title">What You’ll Find Inside</h2>
+      <p>Fast, focused, and friendly learning modules—built to help you master the periodic table.</p>
+
+      <div class="groups-grid" role="list">
+        <article class="group-card" role="listitem">
+          <h3>Color-Coded Elements</h3>
+          <p>Classic category colors for alkali metals, halogens, noble gases, and more—easy to scan and remember.</p>
+        </article>
+
+        <article class="group-card" role="listitem">
+          <h3>Quick Facts & Trends</h3>
+          <p>Learn key ideas like electronegativity, atomic radius, and valence behavior with short, memorable notes.</p>
+        </article>
+
+        <article class="group-card" role="listitem">
+          <h3>Interactive Quiz</h3>
+          <p>Pick a difficulty, race the timer, track your streak, and review detailed explanations to improve quickly.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="intro-section" aria-labelledby="howbuilt-title">
+      <h3 id="howbuilt-title">How It’s Built</h3>
+      <p>
+        The app is crafted with a single external CSS file and one JavaScript file for interactivity. We use
+        semantic HTML5 (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code>) and a responsive grid
+        so content stays clean and readable across screen sizes.
+      </p>
+    </section>
+
+    <section class="intro-section" aria-labelledby="credits-title">
+      <h3 id="credits-title">Credits</h3>
+      <p>
+        Designed and developed by <strong>Ali Rida</strong>. Special thanks to my professor <strong>Maher Itani</strong>,
+        classmates, and open educational resources that inspired the structure and content.
+      </p>
+    </section>
+
+    <section class="intro-section" aria-labelledby="faq-title">
+      <h3 id="faq-title">FAQ</h3>
+
+      <div class="accordion">
+        <button class="accordion-header" aria-expanded="false" aria-controls="faq1">How do I use the Elements page?</button>
+        <div id="faq1" class="accordion-content" role="region" aria-labelledby="faq1-label">
+          <p id="faq1-label" class="sr-only">Answer: Elements page usage</p>
+          <p>Hover or focus on any element tile to see its name and atomic number. Colors indicate the family/category.</p>
+        </div>
+
+        <button class="accordion-header" aria-expanded="false" aria-controls="faq2">What does the Quiz track?</button>
+        <div id="faq2" class="accordion-content" role="region" aria-labelledby="faq2-label">
+          <p id="faq2-label" class="sr-only">Answer: Quiz tracking</p>
+          <p>It tracks your score, streak, and time per question. You can review answers and explanations at the end.</p>
+        </div>
+
+        <button class="accordion-header" aria-expanded="false" aria-controls="faq3">Is the site mobile friendly?</button>
+        <div id="faq3" class="accordion-content" role="region" aria-labelledby="faq3-label">
+          <p id="faq3-label" class="sr-only">Answer: Mobile support</p>
+          <p>Yes—navigation, grids, and cards are responsive. Keyboard and screen reader users are fully supported.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <form id="contact-form" novalidate>
+        <label for="name">Your Name</label>
+        <input id="name" name="name" type="text" placeholder="Ali Rida" required aria-required="true"/>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="name@example.com" required aria-required="true"/>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="How can we help?" required aria-required="true"></textarea>
+
+        <button type="submit">Send Message</button>
+        <div id="form-feedback" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Periodic Table Explorer | Designed by Ali Rida
+      <div class="floating-icon" aria-hidden="true">
+      🧪
+    </div>
+    </p>
+  </footer>
+
+  

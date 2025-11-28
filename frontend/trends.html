@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trends - Periodic Table Explorer</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script defer src="js/script.js"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <h1>Periodic Table Explorer</h1>
+    <nav class="navbar">
+      <div class="logo">PT Explorer</div>
+      <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="introduction.html">Introduction</a></li>
+        <li><a href="elements.html">Elements</a></li>
+        <li><a href="groups.html">Groups</a></li>
+        <li><a href="facts.html">Facts</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="trends.html" class="active" aria-current="page">Trends</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="intro-page">
+    <section class="intro-container">
+      <h2>Periodic Trends</h2>
+      <p class="intro-text">
+        Visualize periodic table trends such as electronegativity, atomic radius, and ionization energy.
+      </p>
+
+      <!-- React mount point -->
+      <div id="trends-root"></div>
+    </section>
+  </main>
+
+
+  <footer>
+    <p>&copy; 2025 Periodic Table Explorer | Designed by Ali Rida</p>
+    <div class="floating-icon" aria-hidden="true">🧪</div>
+  </footer>
+
+
+
+  <!-- === React CDN === -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- === Trends Page React Logic === -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const rootEl = document.getElementById('trends-root');
+      if (!rootEl) {
+        console.error('❌ trends-root element not found');
+        return;
+      }
+
+      const { useState, useEffect } = React;
+
+      function TrendsApp() {
+        const [type, setType] = useState('electronegativity');
+        const [data, setData] = useState([]);
+        const [loading, setLoading] = useState(false);
+        const [error, setError] = useState('');
+
+        useEffect(() => {
+          async function fetchData() {
+            setLoading(true);
+            setError('');
+            console.log('📡 Fetching trend:', type);
+
+            try {
+              const res = await fetch(`http://localhost:3000/api/trends?type=${type}`);
+              const json = await res.json();
+              console.log('✅ API response:', json);
+
+              if (!json.ok) throw new Error(json.error || 'Error loading data');
+              setData(json.data);
+            } catch (err) {
+              console.error('❌ Trend fetch error:', err);
+              setError(err.message);
+            } finally {
+              setLoading(false);
+            }
+          }
+
+          fetchData();
+        }, [type]);
+
+        return (
+          React.createElement("div", { className: "trends-card" },
+            React.createElement("div", { className: "trends-controls" },
+              React.createElement("label", null, "Select Trend: "),
+              React.createElement(
+                "select",
+                { value: type, onChange: e => setType(e.target.value) },
+                [
+                  React.createElement("option", { key: "e", value: "electronegativity" }, "Electronegativity"),
+                  React.createElement("option", { key: "r", value: "radius" }, "Atomic Radius"),
+                  React.createElement("option", { key: "i", value: "ionization" }, "Ionization Energy")
+                ]
+              )
+            ),
+            loading && React.createElement("p", null, "Loading..."),
+            error && React.createElement("p", { style: { color: "red" } }, "⚠ " + error),
+            !loading && !error && React.createElement(TrendsChart, { data, type })
+          )
+        );
+      }
+
+      function TrendsChart({ data, type }) {
+        if (!data.length) return React.createElement("p", null, "No data available.");
+
+        const max = Math.max(...data.map(d => d.value || 0));
+
+        return React.createElement(
+          "div",
+          { className: "trends-chart" },
+          data.map(d =>
+            React.createElement(
+              "div",
+              { key: d.atomic_number, className: "trends-bar-wrapper" },
+              React.createElement("div", {
+                className: "trends-bar",
+                style: { height: (d.value / max) * 150 + "px" }
+              }),
+              React.createElement("span", { className: "trends-label" }, d.symbol)
+            )
+          )
+        );
+      }
+
+      ReactDOM.createRoot(rootEl).render(
+        React.createElement(TrendsApp)
+      );
+    });
+  </script>
+</body>
+</html>
